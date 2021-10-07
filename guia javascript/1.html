@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function calcular(cat,hipo)
+		{
+			var cateto=cat.value;
+			var hipotenusa=hipo.value;
+
+			if (cateto > hipotenusa) 
+			{
+				alert("error: el cateto no puede ser mayor a la hipotenusa");
+				window.close();
+			}
+			else
+			{
+				var cateto2=Math.sqrt(Math.pow(hipotenusa,2) - Math.pow(cateto,2));
+				alert("valor de  2º cateto: "+cateto2);
+				var res =confirm("desea volver a empezar?");
+				if (res)
+				{
+					cat.value="";
+					hipo.value="";
+				}
+				else
+				{
+					window.close();
+				}
+			}
+		}	
+	</script>
+	<title>Calcular</title>
+</head>
+<body>
+<form>
+	Ingrese cateto:<input type="text" name="cat">
+	<br><br>
+	Ingrese hipotenusa:<input type="text" name="hipo">
+	<br><br>
+	<input type="button" value="enviar" onclick="calcular(cat,hipo);">
+</form>
+</body>
+</html>

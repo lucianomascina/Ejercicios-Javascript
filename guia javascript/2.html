@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function calcular(atxt,btxt,ctxt,xtxt)
+		{
+			
+			var a=parseInt(atxt.value);
+			var b=parseInt(btxt.value);
+			var c=parseInt(ctxt.value);
+			var x=parseInt(xtxt.value);
+			var i=0;
+			var y=0;
+
+			with(document)
+			{
+				var tableBody= getElementById('tabla').getElementsByTagName('tbody')[0];
+
+				for(i=-x;i<=x;i++)
+				{
+					var fila = tableBody.insertRow(-1);
+					var colx = fila.insertCell(0);
+					var coly = fila.insertCell(1);
+					y=((a)*(Math.pow(i,2)))+(b*(i))+c;
+					colx.innerHTML=i;
+					coly.innerHTML=y
+				}
+			}
+		}		
+	</script>
+	<title></title>
+</head>
+<body>
+	<h2>Calcular tabla de valores de y=ax2+bx+c</h2>
+	<form>
+		Ingrese valor de a:<input type="text" name="atxt">
+		<br><br>
+		Ingrese valor de b:<input type="text" name="btxt">
+		<br><br>
+		Ingrese valor de c:<input type="text" name="ctxt">
+		<br><br>
+		Ingrese valor de x:<input type="text" name="xtxt">
+		<br><br>
+		<input type="button" value="CALCULAR" onclick="calcular(atxt,btxt,ctxt,xtxt);">
+		<br><br>
+		<hr>
+		<table border="1" width="600px" id="tabla">
+			<thead>
+				<tr>
+					<th>X</th>
+					<th>Y</th>
+				</tr>
+			</thead>
+			<tbody style="text-align: center;">
+			
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>

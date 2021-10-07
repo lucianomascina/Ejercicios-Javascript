@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+
+		var arraynombre=new Array();
+		var arrayedad=new Array();
+		var arraysexo=new Array();
+
+		function guardar(nombre,edad,sexo)
+		{
+			var nombre=nombre.value;
+			var edad=parseInt(edad.value);
+			var sexo=sexo.value;		
+			arraynombre.push(nombre);
+			arrayedad.push(edad);
+			arraysexo.push(sexo);
+
+			with(document)
+			{
+				var tableBody=getElementById('tabla').getElementsByTagName('tbody')[0];
+				var fila=tableBody.insertRow(-1);
+				var colnombre = fila.insertCell(0);
+				var coledad = fila.insertCell(1);
+				var colsexo = fila.insertCell(2);
+
+				colnombre.innerHTML=nombre;
+				coledad.innerHTML=edad;
+				colsexo.innerHTML=sexo;
+			}
+		}
+
+		function promedio() 
+		{
+			var edadhombre=0;
+			var edadmujer=0;
+			var conthombre=0;
+			var contmujer=0;
+			var i;
+
+			for(i=0;i<arrayedad.length;i++)
+			{
+				if(arraysexo[i]=="Hombre")
+				{
+					edadhombre+=arrayedad[i];
+					conthombre++;	
+				}
+				if(arraysexo[i]=="Mujer")
+				{
+					edadmujer+=arrayedad[i];
+					contmujer++;
+				}
+			}
+			var h=document.getElementById('hombres');
+			var m=document.getElementById('mujeres');
+			h.value=edadhombre/conthombre;
+			m.value=edadmujer/contmujer;
+		}
+	</script>
+
+	<title></title>
+</head>
+<body>
+	<form name="form">
+		<label for="nombre">Nombre:</label>
+		<input type="text" name="nombre" id="nombre">
+		<br><br>
+		<label for="edad">Edad:</label>
+		<input type="text" name="edad" id="edad">
+		<br><br>
+		Sexo:<input type="radio" name="sexo" value="Hombre">Hombre
+		<input type="radio" name="sexo" value="Mujer">Mujer	
+		<br><br>
+		<input type="button" name="" value="Guardar" onclick="guardar(nombre,edad,sexo);">  
+		<br><br>
+		<hr>
+		<br><br>
+		<table align="center" border="2" id="tabla" width="800">
+			<thead>
+				<tr align="center">
+					<td>Nombre</td>
+					<td>Edad</td>
+					<td>Sexo</td>
+				</tr>
+			</thead>
+			<tbody>
+			
+			</tbody>
+		</table>
+		<br><br>
+		<hr>
+		<br><br>
+		<input type="button" name="calcular" value="Calcular promedio de edad" onclick="promedio();">
+		<br><br>
+		<label for="mujeres">Mujeres:</label>
+		<input type="text" name="mujeres" id="mujeres">
+		<label for="hombres">Hombres:</label>
+		<input type="text" name="hombres" id="hombres">
+	</form>
+</body>
+</html>

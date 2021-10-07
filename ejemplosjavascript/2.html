@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		var global=100;
+		function uno()
+		{
+			var local_uno=1;
+			alert("global"+global+"local"+local_uno);
+			dos();
+		}
+		function dos()
+		{
+			var local_dos=2;
+			alert("global"+global+"local"+local_dos);
+		}
+
+	</script>
+	<title></title>
+</head>
+<body onload="uno()";>
+
+</body>
+</html>

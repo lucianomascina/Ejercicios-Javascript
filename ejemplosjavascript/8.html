@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function espe(cespe) {
+			var tipo=cespe.value;
+			switch(tipo)			
+			{
+				case "humano": alert("eres un humano");
+						break;
+				case "animal": alert("eres un animal");
+						break;
+				default: alert("especie desconocida");
+						break;				
+			}
+		}
+	</script>
+	<title>Especie</title>
+</head>
+<body>
+	<form>
+	Especie:<input type="text" name="cespe" size="20" onblur="espe(cespe);">
+	</form>
+</body>
+</html>

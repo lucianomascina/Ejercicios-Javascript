@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<script type="text/javascript">
+		function mostrarnombre() 
+		{
+			var nombre="";
+			with(document)
+			{
+				nombre=getElementById('nombre').value;
+			}
+			alert(nombre);
+		}
+	</script>
+	<title></title>
+</head>
+<body>
+	<form>
+		<input type="text" name="nombre" id="nombre" value="default">
+		<input type="button" value="mostrar" onclick="mostrarnombre();">
+	</form>
+</body>
+</html>

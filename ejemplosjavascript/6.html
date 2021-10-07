@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function ver(cedad)
+		{
+			var edad=parseInt(cedad.value);
+
+			if(edad<=18)
+			{
+				alert("no tienes acceso\ndebes tener 18 años");	
+			}
+			else
+			{
+				alert("bienvenido a la página");
+			}
+		}
+	</script>
+	<title></title>
+</head>
+<body>
+	<form>
+		Edad:<input type="text" name="cedad" size="3" onblur="ver(cedad)";>
+
+	</form>
+</body>
+</html>

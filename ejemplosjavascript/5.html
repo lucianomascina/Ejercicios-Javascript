@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function pasa(secre,caja)
+		{
+			var temporal;
+			temporal=secre.value;
+			caja.value=temporal;		
+		}	
+	</script>
+	<title></title>
+</head>
+<body>
+<form>
+	Contraseña:<input type="password" name="secre" size="5" onkeyup="pasa(secre,caja)";>
+	<br>
+	Normal:<input type="text" name="caja" size="5">	
+</form>
+</body>
+</html>

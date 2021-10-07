@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		var banco=100;
+		var num_secreto=0;	
+		function genera() 
+		{
+			num_secreto=Math.random()*3;
+			num_secreto=Math.round(num_secreto);
+			if(num_secreto==0)
+				num_secreto=3;
+		}
+		function juego(valor,c)
+		{
+			if(num_secreto==valor)
+			{
+				alert("enhorabuena");
+				banco+=100;
+				genera();
+			}
+			else
+			{
+				banco-=50;
+			}
+			c.value=banco;
+		}
+	</script>
+	<title></title>
+</head>
+<body onload="genera()";>
+	Apuesta:
+	<form>
+		<p>
+			1<input type="radio" name="r1" onclick="juego(1,caja)">
+			<br>
+			2<input type="radio" name="r1" onclick="juego(2,caja)">
+			<br>
+			3<input type="radio" name="r1" onclick="juego(3,caja)">
+			<br>
+			Banco:<input type="text" name="caja" size="20" value="100">
+		</p>
+	</form>
+</body>
+</html>
